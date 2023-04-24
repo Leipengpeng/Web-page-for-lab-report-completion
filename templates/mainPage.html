@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+    <title>Python Flask by WHUT LPP</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/noscript.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fontawesome-all.min.css') }}"/>
+
+</head>
+<body class="is-preload">
+
+<!-- Wrapper -->
+<div id="wrapper" class="fade-in">
+    <!-- Nav -->
+    <!-- Intro -->
+    <div id="intro">
+        <h2>语音转文字<br/>
+            来自google API的智能体验</h2>
+        <p>Google API 提供了强大的语音转文字功能，可将人类语音转换为计算机可读的文字。
+            这项技术可广泛应用于语音识别、自然语言处理、机器翻译等领域。
+            借助 Google API 的语音转文字功能，开发人员可以轻松地在
+            自己的应用程序中集成语音输入功能，提高用户体验并简化用户操作。
+        </p>
+        <ul class="actions">
+            <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+        </ul>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <a href="#" class="logo">返回主页</a>
+    </header>
+
+
+    <nav id="nav">
+        <ul class="links">
+            <li class="active"><a href="{{ url_for('google') }}">Google</a></li>
+            <li><a href="{{ url_for('chatGPT') }}">chatGPT</a></li>
+            <li><a href="{{ url_for('sphinx') }}">PocketSphinx</a></li>
+            <li><a href="{{ url_for('homeWork') }}">homeWork</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main -->
+    <div id="main">
+
+        <!-- Featured Post -->
+        <article class="post featured">
+            <header class="major">
+                <span class="date">April 13, 2023</span>
+                <h2><a href="#">请输入文件位置<br/>
+                    网站会将其转换为文字</a></h2>
+                <p>文件支持类型有FLAC MP3 WAV</p>
+            </header>
+            <form method="post" action="/googleSpeech">
+                <label for="file_path">文件路径:</label>
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+                <input type="text" id="file_path" name="file_path"><br><br>
+                <input type="submit" value="上传文件">
+            </form>
+
+
+            <h2>输出结果:</h2>
+            <textarea rows="10" cols="50">{{ output }}</textarea>
+
+            <a href="#" class="image main"><img src="/static/images/pic01.jpg" alt=""/></a>
+
+        </article>
+    </div>
+    <!---->
+    <!---->
+</div>
+
+<!-- Scripts -->
+<script src="../static/js/jquery.min.js"></script>
+<script src="../static/js/jquery.scrollex.min.js"></script>
+<script src="../static/js/jquery.scrolly.min.js"></script>
+<script src="../static/js/browser.min.js"></script>
+<script src="../static/js/breakpoints.min.js"></script>
+<script src="../static/js/util.js"></script>
+<script src="../static/js/main.js"></script>
+
+
+</body>
+</html>

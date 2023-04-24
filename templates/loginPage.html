@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+    <title>Python Flask by WHUT LPP</title>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport"/>
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet"/>
+    <link href="{{ url_for('static', filename='css/noscript.css') }}" rel="stylesheet"/>
+    <link href="{{ url_for('static', filename='css/fontawesome-all.min.css') }}" rel="stylesheet"/>
+</head>
+<body class="is-preload">
+<!-- Wrapper -->
+<div class="fade-in" id="wrapper">
+    <!-- Main -->
+    <div id="main">
+        <!-- Form -->
+        <h1>用户登录</h1>
+        <form action="/login" method="post">
+
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+            <div class="row gtr-uniform">
+                <div class="col-6 col-12-xsmall">
+                    <input id="demo-name" name="name" placeholder="Name" type="text" value=""/>
+                </div>
+                <div class="col-6 col-12-xsmall">
+                    <input id="demo-email" name="email" placeholder="Email" type="email" value=""/>
+                </div>
+                <!-- Break -->
+                <div class="col-12">
+                    <select id="demo-category" name="category">
+                        <option value="">- 地区 -</option>
+                        <option value="1">中国大陆</option>
+                        <option value="2">中国香港地区</option>
+                        <option value="3">中国台湾地区</option>
+                    </select>
+                </div>
+                <!-- Break -->
+                <div class="col-4 col-12-small">
+                    <input checked id="demo-priority-low" name="priority" type="radio">
+                    <label for="demo-priority-low">邮箱登录</label>
+                </div>
+                <div class="col-4 col-12-small">
+                    <input id="demo-priority-normal" name="priority" type="radio">
+                    <label for="demo-priority-normal">电话登录</label>
+                </div>
+                <!-- Break -->
+                <div class="col-6 col-12-small">
+                    <input id="demo-copy" name="agreement" type="checkbox">
+                    <label for="demo-copy">我已阅读用户协议</label>
+                </div>
+                <!-- Break -->
+                <div class="col-12">
+                    <ul class="actions">
+                        <li><input class="primary" type="submit" value="登录"/></li>
+                        <li><input type="reset" value="重置"/></li>
+                    </ul>
+                </div>
+            </div>
+
+        </form>
+        <span class="image fit"><img alt="" src="/static/images/pic01.jpg"/></span>
+    </div>
+
+</div>
+
+<!-- Scripts -->
+<script src="../static/js/jquery.min.js"></script>
+<script src="../static/js/jquery.scrollex.min.js"></script>
+<script src="../static/js/jquery.scrolly.min.js"></script>
+<script src="../static/js/browser.min.js"></script>
+<script src="../static/js/breakpoints.min.js"></script>
+<script src="../static/js/util.js"></script>
+<script src="../static/js/main.js"></script>
+
+
+</body>
+</html>

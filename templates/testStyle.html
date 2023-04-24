@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+    <title>Python Flask by WHUT aaaa</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/noscript.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fontawesome-all.min.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/prism.css') }}"/>
+</head>
+<body class="is-preload">
+
+<!-- Wrapper -->
+<div id="wrapper">
+    <!-- Nav -->
+
+
+    <!-- Intro -->
+    <div id="intro">
+        <h2>图片转文字<br/>
+            来自chatGPT API的实验报告利器</h2>
+        <p>请直接输入PDF的文件位置，交由网站来完成全部的实验报告
+        </p>
+        <ul class="actions">
+            <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+        </ul>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <a href="#" class="logo">返回主页</a>
+    </header>
+
+    <nav id="nav">
+    </nav>
+    <!-- Main -->
+    <div id="main">
+        <!-- Featured Post -->
+        <article class="post featured">
+            <header class="major">
+                <span class="date">April 13, 2023</span>
+                <h2><a href="#">请输入文件位置<br/>
+                    网站会将其转换为文字</a></h2>
+                <p>文件仅支持PDF，PDF中含文字图片不影响使用</p>
+            </header>
+            <form method="post" action="/homeWorkDown">
+                <label for="file_path">文件路径:</label>
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+                <input type="text" id="file_path" name="file_path"><br><br>
+                <input type="submit" value="上传文件">
+            </form>
+            <h2>OCR输出结果:</h2>
+            <textarea rows="10" cols="50">{{ output }}</textarea>
+
+            <h2>输出完整代码:</h2>
+            <textarea id="editing" oninput="update(this.value); sync_scroll(this);" onscroll="sync_scroll(this);"onkeydown="check_tab(this, event);">{{ outputP }}</textarea>
+            <pre id="highlighting" aria-hidden="true">
+                <code class="language-python" id="highlighting-content"></code>
+            </pre>
+
+            <h2>输出代码运行结果:</h2>
+            <textarea rows="10" cols="50">{{ outputO }}</textarea>
+
+            <h2>输出代码实验报告:</h2>
+            <textarea rows="10" cols="50">{{ outputH }}</textarea>
+
+            <a href="#" class="image main"><img src="/static/images/pic05.jpg" alt=""/></a>
+
+        </article>
+    </div>
+</div>
+<!-- Scripts -->
+<script src="../static/js/jquery.min.js"></script>
+<script src="../static/js/jquery.scrollex.min.js"></script>
+<script src="../static/js/jquery.scrolly.min.js"></script>
+<script src="../static/js/browser.min.js"></script>
+<script src="../static/js/breakpoints.min.js"></script>
+<script src="../static/js/util.js"></script>
+<script src="../static/js/main.js"></script>
+<script src="../static/js/prism.js"></script>
+
+</body>
+</html>

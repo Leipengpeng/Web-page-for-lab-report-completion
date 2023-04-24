@@ -1,0 +1,10 @@
+<root>
+    <!-- Mysql相关内容 -->
+    <element attribute="mysql_host">&apos;localhost&apos;</element>
+    <element attribute="mysql_user">&apos;***&apos;</element>
+    <element attribute="mysql_password">&apos;***&apos;</element>
+    <element attribute="mysql_db">&apos;***&apos;</element>
+
+    <!-- chatGPT相关内容 -->
+    <element attribute="api_key">&apos;***&apos;</element>
+</root>
